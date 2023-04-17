@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+.main{
+  @apply max-w-6xl mx-auto
+}
+
+/* ........................youtube api......... */
+.title{
+  @apply text-white text-xs;
+}
+.card{
+  @apply border-2 border-red-900 mt-12 rounded-2xl shadow-2xl p-3 h-auto bg-slate-900 mx-5 lg:mx-0
+}
+
+/* ...................navbar.................. */
+.navContainer{
+  @apply flex items-center justify-around my-2 lg:my-6 
+}
+/* .youtubeContainer{
+  font-size: 25px;
+  @apply text-red-700  mr-1 
+} */
+.sup{
+  @apply text-xs text-white 
+}
+.text{
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  color:white;
+  @apply font-bold ml-1
+} 
+.RxHamburgerMenu{
+  @apply text-white lg:text-3xl mr-3 mt-1
+}
+.Navbar{
+  @apply flex items-center 
+}
+.navNotification{
+  @apply flex items-center text-white lg:text-3xl
+}
+.navNot{
+  position: relative;
+}
+.navNot1{
+  position:absolute;
+  top:-3px;
+  right:-12px;
+ 
+  @apply text-xs bg-red-500 text-white rounded-full lg:px-1
+}
+.not:hover{
+  background-color:#272727 ;
+  @apply rounded-full p-2 ml-2
+  
+}
+.navVideo:hover{
+  background-color:#272727 ;
+  @apply rounded-full  p-2 ml-2
+  
+}
+.user{
+  border-radius: 50%;
+  width:30px;
+  height:30px;
+  @apply bg-purple-700 text-white text-lg  px-2 ml-2 text-center
+}
+.Image{
+  width:50px;
+  height:50px;
+}
+  @media only screen and (max-width:600px){
+    .text{
+      font-size: 10px;
+    }
+    .sup{
+      font-size:7px;
+      @apply mr-2
+    }
+    .navNotification,.RxHamburgerMenu{
+      display:none;
+    }
+    .Image{
+      width:20px;
+      height:20px;
+    }
+  }

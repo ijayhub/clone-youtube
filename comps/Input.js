@@ -4,25 +4,25 @@ import styles from '@/styles/Input.module.css';
 import { useState } from 'react';
 // import { useRouter } from 'next/router';
 
-const Input = ({ search, setSearch }) => {
+const Input = ({ search, handleChange }) => {
 	console.log(search);
 	//   const [search, setSearch] = useState('');
 
-	const handleSearch = (e) => {
-		// const router = useRouter();
-		e.preventDefault();
-		// const search = encodeURIComponent(searchQuery);
-		// router.push(`/search?query=${search}`);
-		// 	// router.push(`/search/${searchQuery}`);
-		setSearch(search);
-	};
+	// const handleSearch = (e) => {
+	// 	// const router = useRouter();
+	// 	e.preventDefault();
+	// 	// const search = encodeURIComponent(searchQuery);
+	// 	// router.push(`/search?query=${search}`);
+	// 	// 	// router.push(`/search/${searchQuery}`);
+	// 	setSearch(search);
+	// };
 	return (
 		<>
-			<form className={styles.btnContainer} onSubmit={handleSearch}>
+			<form className={styles.btnContainer}>
 				<input
 					type='text'
 					value={search}
-					onChange={(e) => setSearch(e.target.value)}
+					onChange={handleChange}
 					placeholder='Search for Videos...'
 					className={styles.input}
 					autoComplete='off'

@@ -8,8 +8,9 @@ import yt from '../public/youtube.svg'
 
 
 
-const Navbar = () => {
-  const [search, setSearch] = useState('');
+const Navbar = ({search, handleChange}) => {
+	
+	console.log(search);
 	return (
 		<nav className={styles.navContainer}>
 			<div className='flex items-center '>
@@ -18,7 +19,7 @@ const Navbar = () => {
 				<h1 className={styles.text}>YouTube</h1>
 				<sup className={styles.sup}>NG</sup>
 			</div>
-			<Input search={search} setSearch={setSearch} />
+			<Input search={search} handleChange={ handleChange} />
 			<div className={styles.navNotification}>
 				<MdOutlineVideoCall className={styles.navVideo} />
 				<div className={styles.navNot}>

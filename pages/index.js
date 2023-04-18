@@ -3,22 +3,14 @@ import Image  from 'next/image';
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
 import Navbar from '@/comps/Navbar';
+import { useState } from 'react';
+import { getStaticProps } from 'next';
 // import { useRouter } from 'next/router';
 
 
-export const getStaticProps = async ({ search }) => {
-	console.log(search)
-	const res = await fetch(
-		`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${search}&key=${process.env.NEXT_APP_YOUTUBE_API_KEY}&maxResults=20`
-	);
-	const data = await res.json();
-
-	return {
-		props: { videos: data },
-	};
-};
 
 const Youtube = ({ videos }) => {
+		const [search, setSearch] = useState('');
   return (
 		<>
 			<Head>
@@ -31,7 +23,8 @@ const Youtube = ({ videos }) => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<Navbar />
+			<Navbar search={search} handleChange={(e)=>setSearch(e.target.value)} />
+
 			<main className={styles.main}>
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mx-4 lg:mx-0 '>
 					{videos.items.map((video) => (
